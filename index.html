@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="مجموعة زيفور العالمية، مجموعة متخصصة في البرمجيات والشبكات والحلول الطبية والتصميم والتقنية الرقمية.">
+
+    <meta name="theme-color" content="#071426">
+
+    <title>ZEVOR GLOBAL GROUP | مجموعة زيفور العالمية</title>
+
+    <style>
+        /* =====================================
+           1. إعدادات الموقع الأساسية
+        ===================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #00d4ff;
+            --secondary: #176bff;
+            --dark: #071426;
+            --dark-card: #10223a;
+            --white: #ffffff;
+            --gray: #b8c6d9;
+        }
+
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            line-height: 1.8;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* =====================================
+           2. رأس الموقع والقائمة
+        ===================================== */
+
+        header {
+            background: rgba(7, 20, 38, 0.97);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            min-height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 13px;
+            color: var(--white);
+            letter-spacing: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .menu-btn {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 7px 12px;
+            border-radius: 8px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* =====================================
+           3. الواجهة الرئيسية
+        ===================================== */
+
+        .hero {
+            min-height: 570px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            background:
+                radial-gradient(
+                    circle at top,
+                    rgba(23, 107, 255, 0.24),
+                    transparent 55%
+                );
+            padding: 80px 0;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .hero-label {
+            color: var(--primary);
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 6vw, 58px);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            color: var(--gray);
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--dark);
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--dark);
+        }
+
+        /* =====================================
+           4. الأقسام العامة
+        ===================================== */
+
+        section {
+            padding: 80px 0;
+            scroll-margin-top: 85px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .section-title h2 span {
+            color: var(--primary);
+        }
+
+        .section-title p {
+            color: var(--gray);
+        }
+
+        /* =====================================
+           5. قسم من نحن
+        ===================================== */
+
+        .about {
+            background: #0a192c;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            color: var(--gray);
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+
+        .slogan {
+            color: var(--primary);
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 25px;
+        }
+
+        /* =====================================
+           6. بطاقات الخدمات
+        ===================================== */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--dark-card);
+            padding: 30px 25px;
+            border: 1px solid rgba(0, 212, 255, 0.12);
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 35px rgba(0, 212, 255, 0.08);
+        }
+
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 15px;
+        }
+
+        /* =====================================
+           7. قسم الرؤية والرسالة
+        ===================================== */
+
+        .vision {
+            background: #0a192c;
+        }
+
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .vision-card {
+            padding: 30px;
+            background: var(--dark-card);
+            border-radius: 15px;
+            border-right: 4px solid var(--primary);
+        }
+
+        .vision-card h3 {
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .vision-card p {
+            color: var(--gray);
+        }
+
+        /* =====================================
+           8. قسم أهداف المجموعة
+        ===================================== */
+
+        .goals-list {
+            max-width: 850px;
+            margin: auto;
+            list-style: none;
+        }
+
+        .goals-list li {
+            background: var(--dark-card);
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            color: var(--gray);
+        }
+
+        .goals-list li::before {
+            content: "✓ ";
+            color: var(--primary);
+            font-weight: bold;
+            margin-left: 8px;
+        }
+
+        /* =====================================
+           9. قسم التواصل
+        ===================================== */
+
+        .contact {
+            background: #0a192c;
+        }
+
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+            background: var(--dark-card);
+            padding: 35px;
+            border-radius: 15px;
+        }
+
+        .contact-box p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .contact-note {
+            font-size: 13px;
+            margin-top: 20px;
+        }
+
+        /* =====================================
+           10. تذييل الموقع
+        ===================================== */
+
+        footer {
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid rgba(0, 212, 255, 0.15);
+        }
+
+        footer h3 {
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .footer-copy {
+            margin-top: 15px;
+            font-size: 12px;
+        }
+
+        /* =====================================
+           11. تحسين الموقع للجوال
+        ===================================== */
+
+        @media (max-width: 900px) {
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                right: 0;
+                left: 0;
+                background: var(--dark);
+                padding: 20px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 15px;
+                border-bottom: 1px solid var(--primary);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 8px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: 92%;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .hero {
+                min-height: 500px;
+                padding: 60px 0;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .section-title h2 {
+                font-size: 27px;
+            }
+
+            .services-grid,
+            .vision-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                padding: 25px 20px;
+            }
+
+            .contact-box {
+                padding: 25px 18px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- رأس الموقع -->
+    <header>
+        <div class="container navbar">
+
+            <a href="#home" class="logo">
+                ZEVOR
+                <span>مجموعة زيفور العالمية</span>
+            </a>
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="فتح القائمة"
+                aria-expanded="false">
+                ☰
+            </button>
+
+            <nav>
+                <ul class="nav-links" id="navLinks">
+
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#services">مجالاتنا</a></li>
+                    <li><a href="#vision">رؤيتنا</a></li>
+                    <li><a href="#goals">أهدافنا</a></li>
+                    <li><a href="#contact">تواصل معنا</a></li>
+
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- الواجهة الرئيسية -->
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="container hero-content">
+
+                <div class="hero-label">
+                    ZEVOR GLOBAL GROUP
+                </div>
+
+                <h1>
+                    مجموعة زيفور العالمية
+                    <br>
+                    <span>نصنع حلول المستقبل</span>
+                </h1>
+
+                <p>
+                    مجموعة تقنية طموحة تسعى إلى تطوير الحلول الرقمية
+                    والبرمجية والتقنية، وبناء مشاريع مبتكرة تخدم
+                    الأفراد والمؤسسات وتساهم في صناعة المستقبل.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#services" class="btn btn-primary">
+                        اكتشف مجالاتنا
+                    </a>
+
+                    <a href="#about" class="btn btn-outline">
+                        تعرّف علينا
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- من نحن -->
+        <section class="about" id="about">
+
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>من <span>نحن؟</span></h2>
+                    <p>التقنية طريقتنا لصناعة حلول أفضل</p>
+                </div>
+
+                <div class="about-content">
+
+                    <p>
+                        زيفور العالمية هي هوية لمجموعة مشاريع
+                        وخدمات تسعى إلى الجمع بين التقنية والابتكار
+                        وتطوير الأعمال.
+                    </p>
+
+                    <p>
+                        نطمح إلى إنشاء منظومة متكاملة تضم البرمجيات،
+                        والشبكات، والحلول الطبية الرقمية، والتصميم،
+                        والأمن السيبراني، والتعليم، والتجارة الإلكترونية.
+                    </p>
+
+                    <p>
+                        هدفنا هو تطوير خدمات عملية قابلة للتوسع،
+                        مع الاهتمام بالجودة، وسهولة الاستخدام،
+                        والتطوير المستمر.
+                    </p>
+
+                    <div class="slogan">
+                        رؤية، ابتكار، وريادة نحو المستقبل.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- مجالات المجموعة -->
+        <section id="services">
+
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>مجالات <span>المجموعة</span></h2>
+                    <p>
+                        أقسام متنوعة تحت مظلة زيفور العالمية
+                    </p>
+                </div>
+
+                <div class="services-grid">
+
+                    <article class="service-card">
+                        <div class="service-icon">💻</div>
+                        <h3>زيفور للبرمجيات</h3>
+                        <p>
+                            تطوير المواقع الإلكترونية، والتطبيقات،
+                            والأنظمة الإدارية، وقواعد البيانات،
+                            والحلول البرمجية المخصصة.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">🌐</div>
+                        <h3>زيفور للشبكات</h3>
+                        <p>
+                            تصميم الشبكات وإدارتها، وحلول MikroTik،
+                            ومراقبة الأجهزة، وإدارة مراكز الشبكات،
+                            وصيانة البنية التحتية.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">🏥</div>
+                        <h3>زيفور للحلول الطبية</h3>
+                        <p>
+                            تطوير أنظمة المستشفيات والعيادات،
+                            وإدارة المواعيد والمرضى والمخزون الطبي،
+                            وتنظيم البيانات الصحية.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">🎨</div>
+                        <h3>زيفور للتصميم</h3>
+                        <p>
+                            تصميم الهويات البصرية والشعارات،
+                            وواجهات المواقع والتطبيقات،
+                            والمواد الإعلانية والتسويقية.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">🔐</div>
+                        <h3>زيفور للأمن السيبراني</h3>
+                        <p>
+                            التوعية بالأمن الرقمي، وتحسين حماية
+                            الأنظمة والشبكات، وتقييم الأمان
+                            ضمن نطاقات مصرح بها.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">📱</div>
+                        <h3>زيفور للحلول الرقمية</h3>
+                        <p>
+                            التحول الرقمي، وأتمتة الأعمال،
+                            والأنظمة الذكية، وربط الخدمات
+                            والمنصات الإلكترونية.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">🛒</div>
+                        <h3>زيفور للتجارة الإلكترونية</h3>
+                        <p>
+                            تطوير المتاجر الإلكترونية،
+                            وتنظيم المنتجات والطلبات،
+                            وإدارة العمليات التجارية الرقمية.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">📚</div>
+                        <h3>زيفور للتعليم والتدريب</h3>
+                        <p>
+                            منصات التعلم الإلكتروني،
+                            والدورات التقنية، والمحتوى التعليمي،
+                            وتطوير المهارات الرقمية.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">⚙️</div>
+                        <h3>زيفور للأنظمة الإدارية</h3>
+                        <p>
+                            أنظمة المخازن والمبيعات والمشتريات،
+                            وإدارة الموظفين والمشاريع،
+                            والتقارير ولوحات التحكم.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- الرؤية والرسالة -->
+        <section class="vision" id="vision">
+
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>رؤيتنا <span>ورسالتنا</span></h2>
+                    <p>الطموح يبدأ بفكرة وينمو بالعمل</p>
+                </div>
+
+                <div class="vision-grid">
+
+                    <div class="vision-card">
+                        <h3>🎯 رؤيتنا</h3>
+                        <p>
+                            أن نصبح مجموعة رائدة في تقديم الحلول
+                            التقنية والرقمية، وأن نساهم في بناء
+                            مستقبل أكثر تطورًا واعتمادًا على الابتكار.
+                        </p>
+                    </div>
+
+                    <div class="vision-card">
+                        <h3>🚀 رسالتنا</h3>
+                        <p>
+                            تقديم حلول عملية وموثوقة تساعد الأفراد
+                            والمؤسسات على تطوير أعمالهم، وتحسين
+                            خدماتهم، والاستفادة من التكنولوجيا.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- أهداف المجموعة -->
+        <section id="goals">
+
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>أهداف <span>المجموعة</span></h2>
+                    <p>خطواتنا نحو بناء منظومة متكاملة</p>
+                </div>
+
+                <ul class="goals-list">
+
+                    <li>
+                        إنشاء مشاريع برمجية وتقنية تخدم احتياجات السوق.
+                    </li>
+
+                    <li>
+                        تطوير أنظمة إدارية تساعد المؤسسات على تنظيم أعمالها.
+                    </li>
+
+                    <li>
+                        بناء حلول رقمية لإدارة الشبكات ومراقبتها وصيانتها.
+                    </li>
+
+                    <li>
+                        المساهمة في تطوير أنظمة المستشفيات والعيادات.
+                    </li>
+
+                    <li>
+                        تقديم خدمات التصميم والهوية البصرية.
+                    </li>
+
+                    <li>
+                        دعم التعليم والتدريب في المجالات التقنية.
+                    </li>
+
+                    <li>
+                        التوسع تدريجيًا في مشاريع وخدمات جديدة.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- التواصل -->
+        <section class="contact" id="contact">
+
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>تواصل <span>معنا</span></h2>
+                    <p>نرحب بالأفكار والمشاريع وفرص التعاون</p>
+                </div>
+
+                <div class="contact-box">
+
+                    <h3>مجموعة زيفور العالمية</h3>
+
+                    <p>
+                        هل لديك مشروع أو فكرة ترغب في تطويرها؟
+                        يمكنك التواصل معنا وإضافة وسائل الاتصال
+                        الرسمية للمجموعة هنا.
+                    </p>
+
+                    <!-- استبدل الرابط التالي برابط التواصل الرسمي -->
+
+                    <a
+                        class="btn btn-primary"
+                        href="mailto:info@zevor.example">
+                        تواصل عبر البريد الإلكتروني
+                    </a>
+
+                    <p class="contact-note">
+                        تنبيه: البريد الموجود في هذا النموذج تجريبي،
+                        ويجب استبداله ببريد حقيقي قبل نشر الموقع.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- نهاية الموقع -->
+    <footer>
+
+        <div class="container">
+
+            <h3>ZEVOR GLOBAL GROUP</h3>
+
+            <p>
+                مجموعة زيفور العالمية
+            </p>
+
+            <p>
+                رؤية، ابتكار، وريادة نحو المستقبل.
+            </p>
+
+            <p class="footer-copy">
+                جميع الحقوق محفوظة ©
+                <span id="year"></span>
+                مجموعة زيفور العالمية
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript: تشغيل القائمة والسنة -->
+    <script>
+
+        // الحصول على زر القائمة
+        const menuBtn = document.getElementById("menuBtn");
+
+        // الحصول على قائمة الروابط
+        const navLinks = document.getElementById("navLinks");
+
+        // فتح القائمة وإغلاقها عند الضغط
+        menuBtn.addEventListener("click", function () {
+
+            navLinks.classList.toggle("active");
+
+            const isOpen = navLinks.classList.contains("active");
+
+            menuBtn.setAttribute("aria-expanded", isOpen);
+
+            menuBtn.textContent = isOpen ? "✕" : "☰";
+
+        });
+
+        // إغلاق القائمة بعد اختيار أحد الأقسام
+        document.querySelectorAll("#navLinks a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                navLinks.classList.remove("active");
+
+                menuBtn.setAttribute("aria-expanded", "false");
+
+                menuBtn.textContent = "☰";
+
+            });
+
+        });
+
+        // عرض السنة الحالية تلقائيًا
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+    </script>
+
+</body>
+
+</html>
